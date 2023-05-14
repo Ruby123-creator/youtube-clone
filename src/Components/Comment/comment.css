@@ -1,0 +1,17 @@
+.comment {
+    font-size: 0.9rem;
+    border-bottom: 2px solid #353946;
+    
+    
+ }
+.comment img {
+    width: 50px;
+    height: 50px;
+ }
+
+  .comment .comment-header {
+    color: #fff;
+ }
+ .comment .comment-body {
+    overflow: hidden;
+ }

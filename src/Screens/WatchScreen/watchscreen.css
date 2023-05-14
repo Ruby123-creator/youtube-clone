@@ -1,0 +1,20 @@
+@import url('../../base.css');
+
+.watchScreen {
+   position: relative;
+   height: 70vh;
+   background-color: #353946;
+   width: 100%;
+   margin-bottom: 2rem;
+}
+/* .watchScreen .ScreenVideo{
+    height: 70;
+  position: relative;
+  top: 200px;
+} */
+
+@media (max-width: var(--breakpoint-small)) {
+   .watchScreen {
+      height: 35vh;
+   }
+}

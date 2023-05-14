@@ -1,0 +1,88 @@
+@import url('../../base.css');
+
+.video {
+   /* margin-bottom: 1rem; */
+   padding: 0.7rem;
+   margin: 20px;
+   width: 200px;
+   min-width: 250px;
+   font-weight: 500;
+   font-size: 0.9rem;
+
+   cursor: pointer;
+
+   
+
+   
+
+   
+   
+}
+
+.video .details {
+   width: 100%;
+    display: flex;
+    align-items: center;
+ }
+ .video .top {
+    margin-bottom: 0.5rem;
+    position: relative;
+    width: 100%;
+    
+    
+ }
+ 
+ /* .lazy-load-image-background {
+    width: 20%;
+ } */
+
+ .top span img {
+    width: 100%;
+ } 
+
+.video .title {
+    margin-bottom: 0.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 35px;  
+    color: #fff;
+    /* @include line-clamp(1); */
+ }
+
+.video .duration {
+    position: absolute;
+
+    bottom: 0.3rem;
+    right: 0.3rem;
+width: 45px;
+    padding: 0.2rem;
+    background: #080808ec;
+    border-radius: 3px;
+ }
+
+.video .channel img {
+    width: 36px;
+    height: 36px;
+      
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    cursor: pointer;
+ }
+
+.video .channel {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+   justify-content: flex-start !important;
+    
+    
+ }
+
+.video p {
+    margin-bottom: 0;
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+ }

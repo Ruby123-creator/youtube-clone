@@ -1,0 +1,31 @@
+
+ .comments img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+ }
+ .comments form{
+    width: 100%;
+ }
+ .comments button {
+    background-color: #353946;
+    color: #fedede;
+    letter-spacing: 0.5px;
+    
+ }
+ .comments button:focus {
+    border: none;
+    outline: none;
+ }
+
+.comments input {
+    width: 85%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #353946;
+    color: #fff;
+    
+ }
+ .comments input:focus {
+    outline: none;
+ }

@@ -1,0 +1,63 @@
+@import url('../../base.css');
+
+
+
+@media (max-width: var(--breakpoint-small)) {
+   .videoMetaData  h5 {
+         font-size: 1.1rem;
+      }
+   
+}
+
+ 
+.videoMetaData .top   span {
+       cursor: pointer;
+    }
+ 
+   .videoMetaData .description {
+        font-size: 0.9rem;
+        white-space: pre-line;
+        border-bottom: 0.2px solid var(--border-color);
+   }
+   .showMoreText {
+    text-decoration: none;
+    display: block;
+    margin: 1rem 0;
+    color: #fff;
+    font-weight: 500;
+ }
+
+
+.videoMetaData button {
+    background-color: red;
+    color: #fff;
+    border-radius: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    
+    &:hover {
+       color: #fff;
+    }
+    &:focus {
+       border: none;
+       outline: none;
+    }
+ }
+
+.videoMetaData .btn-gray {
+    background-color: gray;
+ }
+.videoMetaData .channel {
+    border-top: 0.2px solid var(--border-color);
+    border-bottom: 0.2px solid var(--border-color);
+    
+
+    
+ }
+.videoMetaData .like{
+   color: white;
+}
+.videoMetaData .channel img {
+    width: 50px;
+    height: 50px;
+ }
