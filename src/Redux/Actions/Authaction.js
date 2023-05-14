@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { auth } from '../../firbase';
 
