@@ -39,7 +39,8 @@ signInWithPopup(auth, provider)
       
 }
 
-export const log_out =(dispatch)=>{
+export const log_out = dispatch=>{
+  // console.log("idhr aaya")
   dispatch({
     type:LOG_OUT,
   })

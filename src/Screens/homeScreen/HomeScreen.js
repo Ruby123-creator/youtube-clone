@@ -28,7 +28,9 @@ function HomeScreen() {
  
   return (
     <Container>
+      <div className="category">
         <CategoryBar/>
+        </div>
         <InfiniteScroll
             dataLength={videos.length}
             next={fetchData}

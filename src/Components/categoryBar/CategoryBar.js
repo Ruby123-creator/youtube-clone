@@ -16,10 +16,7 @@ const keywords = [
     'Coding',
     'Cricket',
     'Football',
-    'Real Madrid',
-    'Gatsby',
-    'Poor Coder',
-    'Shwetabh',
+    
  ]
  
 function CategoryBar() {

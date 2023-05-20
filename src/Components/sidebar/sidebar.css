@@ -61,12 +61,12 @@ a {
  li:hover {
     background-color: var(--border-color);
  }
-@media (max-width: var(--breakpoint-medium)) {
+@media screen and (max-width: var(--breakpoint-medium)) {
    .sidebar {
       width: 90px;
    }
    
-     .sidebar span {
+     nav {
          display: none;
       }
       li {

@@ -3,12 +3,12 @@
 .video {
    /* margin-bottom: 1rem; */
    padding: 0.7rem;
-   margin: 20px;
+   /* margin: 20px; */
    width: 200px;
    min-width: 250px;
    font-weight: 500;
    font-size: 0.9rem;
-
+   z-index: -30;
    cursor: pointer;
 
    
@@ -38,6 +38,7 @@
 
  .top span img {
     width: 100%;
+    border-radius: 10px;
  } 
 
 .video .title {

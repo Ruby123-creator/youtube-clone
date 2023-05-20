@@ -10,11 +10,12 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { Col, Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 
-function VideoHor({video}) {
+function VideoHor({video,searchScreen,subScreen}) {
    const [views, setViews] = useState(null)
    const [duration, setDuration] = useState(null)
    const [channelIcon, setChannelIcon] = useState(null)
   const Navigate = useNavigate();
+  
    const {
       id,
       snippet: {
@@ -27,7 +28,7 @@ function VideoHor({video}) {
          resourceId,
       },
    } = video
-   
+   const isvideo = id.kind==='youtube#video'
    useEffect(() => {
       const get_video_details = async () => {
          const {
@@ -41,10 +42,14 @@ function VideoHor({video}) {
          setDuration(items[0].contentDetails.duration)
          setViews(items[0].statistics.viewCount)
       }
-      get_video_details()
-   }, [id])
+    if(isvideo) get_video_details()
+   }, [id,isvideo])
+  console.log(views)
    const HandleClick =()=>{
-      Navigate(`/watch/${id.videoId}`)
+      isvideo?
+     Navigate(`/watch/${id.videoId}`)
+     :Navigate(`/channel/${id.channelId}`)
+
    }
    useEffect(() => {
       const get_channel_icon = async () => {
@@ -65,52 +70,53 @@ function VideoHor({video}) {
 
    // const history = useHistory()
 
-   const _channelId = resourceId?.channelId || channelId
 
   return (
-    <Row className='videoHorizontal m-1  align-align-items-center' onClick={HandleClick}>
+    <Row className='videoHorizontal m-1 w-full align-align-items-center' onClick={HandleClick}>
    <Col
             xs={6}
-            // md={searchScreen || subScreen ? 4 : 6}
+            md ={searchScreen||subScreen?3:6}
             className='left'>
+
             <LazyLoadImage
                src={medium.url}
                effect='blur'
-               // className={`thumbnail ${thumbnail} `}
+               className='thumbnail'
                wrapperClassName='thumbnail-wrapper'
             />
-            { (
-               <span className='duration'>{_duration}</span>
-            )}
+
+            
+            {isvideo && <span className='duration'>{_duration}</span>
+}
+         
          </Col>
          <Col
             xs={6}
-            // md={searchScreen || subScreen ? 8 : 6}
+         
             className='p-0 right'>
             <p className='mb-1 title'>{title}</p>
 
-            {(
+            
                <div className='details'>
                   <AiFillEye /> {numeral(views).format('0.a')} Views •
                   {moment(publishedAt).fromNow()}
                </div>
-            )}
+            
 
-            {/* {(searchScreen || subScreen) && (
-               <p className='mt-1 desc'>{description}</p>
-            )} */}
+            { (searchScreen||subScreen & isvideo) && <p className='mt-1 desc'>{description}</p>} 
+
+            
+
+            
+            
 
             <div className='my-1 channel d-flex align-items-center'>
-               
-                  <LazyLoadImage src='' effect='blur' />
-              
+               {isvideo && (
+                  <LazyLoadImage src={channelIcon?.url} effect='blur' />
+                  )}
                <p className='mb-0'>{channelTitle}</p>
             </div>
-            {/* {subScreen && (
-               <p className='mt-2'>
-                  {video.contentDetails.totalItemCount} Videos
-               </p>
-            )} */}
+            
          </Col>
     </Row>
   )

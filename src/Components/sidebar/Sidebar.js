@@ -10,28 +10,30 @@ import {
    MdHome,
    MdSentimentDissatisfied,
 } from 'react-icons/md'
-import { useNavigate } from 'react-router-dom'
+import { log_out } from '../../Redux/Actions/Authaction'
+import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 function Sidebar({handleToggleSidebar,sidebar}) {
-   //  console.log("sidebar",sidebar)
+   const dispatch = useDispatch()
    const Navigate = useNavigate()
+   //  console.log("sidebar",sidebar)
     return (
         <nav
-           className={sidebar ? 'sidebar open' : 'sidebar'}
-           onClick={() => handleToggleSidebar(false)}
+           
            >
 
-           <a to='/'>
+           <Link to='/'>
               <li>
                  <MdHome size={23} />
                  <span>Home</span>
               </li>
-           </a>
-           <a to='/feed/subscriptions'>
+           </Link>
+           <Link to='/feed/subscriptions'>
               <li>
                  <MdSubscriptions size={23} />
                  <span>Subscriptions</span>
               </li>
-           </a>
+           </Link>
   
            <li>
               <MdThumbUp size={23} />
@@ -54,7 +56,10 @@ function Sidebar({handleToggleSidebar,sidebar}) {
   
            <hr />
   
-           <li onClick={()=>Navigate('/auth')} >
+           <li onClick={()=>{
+            dispatch(log_out)
+            Navigate('/auth')
+            }} >
               <MdExitToApp size={23} />
               <span>Log Out</span>
            </li>

@@ -9,6 +9,8 @@ import { useSelector } from 'react-redux';
 import { useState,useEffect } from 'react';
 import LoginScreen from './Screens/loginScreen/LoginScreen';
 import WatchScreen from './Screens/WatchScreen/WatchScreen';
+import SearchScreen from './Screens/searchScreen/SearchScreen';
+import ChannelScreen from './Screens/channelScreen/ChannelScreen';
 const Layout = ({ children }) => {
   const [sidebar, toggleSidebar] = useState(false)
    //   console.log('sidebar' ,sidebar)
@@ -49,6 +51,10 @@ function App() {
             </Layout>}/>
         <Route path="/auth" element={<Layout><LoginScreen/></Layout>}/>    
         <Route path="/watch/:id" element={<Layout><WatchScreen/></Layout>}/>    
+        <Route path="/search/:query" element={<Layout><SearchScreen/></Layout>}/>  
+        <Route path="/channel/:channelid" element={<Layout><ChannelScreen/></Layout>}/>    
+        <Route path="/feed/subscriptions" element={<Layout><ChannelScreen/></Layout>}/>    
+
 
          </Routes> 
     </div>

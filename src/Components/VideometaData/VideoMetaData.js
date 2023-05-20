@@ -32,7 +32,7 @@ const [dislike,setdislike] = useState(false)
            {moment(publishedAt).fromNow()}
         </span>
 
-        <div>
+        <div className='d-flex gap-3'>
            <span className='mr-3'>
               <MdThumbUp size={26} onClick={()=>{
                setlike(!like) 
@@ -52,12 +52,12 @@ const [dislike,setdislike] = useState(false)
      </div>
   </div>
   <div className='py-3 my-2 channel d-flex justify-content-between align-items-center'>
-     <div className='d-flex'>
+     <div className='d-flex gap-3'>
         <img
            src={channelSnippet?.thumbnails?.default?.url}
           
            alt=''
-           className='mr-3 rounded-circle'
+           className='rounded-circle'
         />
         <div className='d-flex flex-column'>
            <span>{channelTitle}</span>
