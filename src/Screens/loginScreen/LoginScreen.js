@@ -17,7 +17,7 @@ const LoginScreen = () => {
    if(accessToken && sessionStorage.getItem("userToken")){
       Navigate('/')
    }
- },[accessToken])
+ },[accessToken,Navigate])
 
 
    return (
