@@ -1,6 +1,6 @@
 import './loginScreen.css'
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { Login } from '../../Redux/Actions/Authaction'
 
@@ -8,7 +8,7 @@ import { Login } from '../../Redux/Actions/Authaction'
 const LoginScreen = () => {
 
  const dispatch = useDispatch()
- const accessToken = useSelector(state=>state.auth.accessToken)
+//  const accessToken = useSelector(state=>state.auth.accessToken)
  const handleLogin =()=>{
    dispatch(Login)
  }
@@ -17,7 +17,7 @@ const LoginScreen = () => {
    if(sessionStorage.getItem("userToken")){
       Navigate('/')
    }
- },[accessToken])
+ },[Navigate])
 
 
    return (

@@ -25,7 +25,7 @@ function VideoHor({video,searchScreen,subScreen}) {
          title,
          publishedAt,
          thumbnails: { medium },
-         resourceId,
+         // resourceId,
       },
    } = video
    const isvideo = id.kind==='youtube#video'

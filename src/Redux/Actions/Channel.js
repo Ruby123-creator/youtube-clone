@@ -1,4 +1,4 @@
-import { CHANNEL_DETAILS_FAIL, CHANNEL_DETAILS_REQUEST, CHANNEL_DETAILS_SUCCESS, SET_SUBSCRIPTION_STATUS } from "../ActionTypes"
+import { CHANNEL_DETAILS_FAIL, CHANNEL_DETAILS_REQUEST, CHANNEL_DETAILS_SUCCESS } from "../ActionTypes"
 import request from "../../api"
 export const getChannelDetails =id=>async dispatch=>{
     try{

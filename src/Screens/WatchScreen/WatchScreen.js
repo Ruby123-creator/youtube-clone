@@ -16,7 +16,7 @@ function WatchScreen() {
     dispatch(getRelatedVideos(id))
   },[dispatch,id])
   const {video ,loading} = useSelector(state=>state.selectedVideo)
-  const {videos ,loading:relatedVideosloading} =useSelector(state=>state.relatedVideos)
+  const {videos} =useSelector(state=>state.relatedVideos)
   return (
     <Row>
      <Col lg={8}>

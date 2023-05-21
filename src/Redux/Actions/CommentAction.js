@@ -1,4 +1,4 @@
-import { COMMENT_LIST_FAIL, COMMENT_LIST_REQUEST, COMMENT_LIST_SUCCESS, CREATE_COMMENT_FAIL, CREATE_COMMENT_SUCCESS } from "../ActionTypes"
+import { COMMENT_LIST_FAIL, COMMENT_LIST_REQUEST, COMMENT_LIST_SUCCESS } from "../ActionTypes"
 import request from "../../api"
 
 export const getCommentsById =id=>async dispatch=>{

@@ -8,7 +8,7 @@ import SkeletonVideo from '../../Components/Skeleton'
 import { getVideosByCategory } from '../../Redux/Actions/Videoaction'
 import Video from '../../Components/video/Video'
 import { useEffect } from 'react'
-import CategoryBar from '../../Components/categoryBar/CategoryBar'
+// import CategoryBar from '../../Components/categoryBar/CategoryBar'
 function HomeScreen() {
     const dispatch = useDispatch()
     useEffect(() => {
