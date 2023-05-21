@@ -9,7 +9,7 @@
 }
 
 
-@media (max-width: var(--breakpoint-small)) {
+@media screen and  (max-width:400px) {
    .watchScreen {
       height: 35vh;
    }

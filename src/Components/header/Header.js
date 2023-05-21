@@ -1,17 +1,20 @@
-import React, { useState } from 'react'
+import React, {useState } from 'react'
 import './header.css'
 import { FaBars } from 'react-icons/fa'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { MdNotifications, MdApps } from 'react-icons/md'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 function Header({handleToggleSidebar }) {
 const [searchinput ,setSearchInput] = useState("")
 const Navigate = useNavigate()
      const handleSubmit =(e)=>{
       e.preventDefault();
       Navigate(`/search/${searchinput}`)
+      
      }
-
+  const user = useSelector(state=>state.auth?.user)
+  
     return (
         <div className='header '>
            <FaBars
@@ -33,15 +36,15 @@ const Navigate = useNavigate()
                  
                  onChange={(e)=>setSearchInput(e.target.value)}
               />
-              <button type='submit'>
-                 <AiOutlineSearch size={22} />
-              </button>
+             <button type='submit'>                 <AiOutlineSearch size={22} />
+</button> 
            </form>
+           
   
            <div className='icons'>
               <MdNotifications size={28} />
               <MdApps size={28} />
-              <img src='' alt='avatar' />
+              <img src={user?.photoUrl} alt="avtar" />
            </div>
         </div>
   )

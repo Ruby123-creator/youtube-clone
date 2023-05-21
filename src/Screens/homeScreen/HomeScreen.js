@@ -28,9 +28,9 @@ function HomeScreen() {
  
   return (
     <Container>
-      <div className="category">
+      {/* <div className="category">
         <CategoryBar/>
-        </div>
+        </div> */}
         <InfiniteScroll
             dataLength={videos.length}
             next={fetchData}
@@ -42,12 +42,10 @@ function HomeScreen() {
                <div className='videoBox'>
             {!loading
                ? videos.map((video,i) => (
-                  //   <Col lg={3} md={4}>
                        <Video video={video} key={i} />
-                  //   {/* </Col> */}
                  ))
-               : [...Array(20)].map(() => (
-                    <Col lg={3} md={4}>
+               : [...Array(20)].map((element,index) => (
+                    <Col lg={3} md={4} key={index}>
                        <SkeletonVideo />
                     </Col>
                  ))}

@@ -44,7 +44,6 @@ function VideoHor({video,searchScreen,subScreen}) {
       }
     if(isvideo) get_video_details()
    }, [id,isvideo])
-  console.log(views)
    const HandleClick =()=>{
       isvideo?
      Navigate(`/watch/${id.videoId}`)
@@ -68,7 +67,6 @@ function VideoHor({video,searchScreen,subScreen}) {
    const seconds = moment.duration(duration).asSeconds()
    const _duration = moment.utc(seconds * 1000).format('mm:ss')
 
-   // const history = useHistory()
 
 
   return (
@@ -78,7 +76,10 @@ function VideoHor({video,searchScreen,subScreen}) {
             md ={searchScreen||subScreen?3:6}
             className='left'>
 
-            <LazyLoadImage
+
+
+          <div className="video-img">
+          <LazyLoadImage
                src={medium.url}
                effect='blur'
                className='thumbnail'
@@ -88,6 +89,8 @@ function VideoHor({video,searchScreen,subScreen}) {
             
             {isvideo && <span className='duration'>{_duration}</span>
 }
+          </div>
+ 
          
          </Col>
          <Col
@@ -101,16 +104,8 @@ function VideoHor({video,searchScreen,subScreen}) {
                   <AiFillEye /> {numeral(views).format('0.a')} Views •
                   {moment(publishedAt).fromNow()}
                </div>
-            
-
-            { (searchScreen||subScreen & isvideo) && <p className='mt-1 desc'>{description}</p>} 
-
-            
-
-            
-            
-
-            <div className='my-1 channel d-flex align-items-center'>
+               { (searchScreen||subScreen & isvideo) && <p className='mt-1 desc'>{description}</p>} 
+<div className='mb-2 channel d-flex align-items-center'>
                {isvideo && (
                   <LazyLoadImage src={channelIcon?.url} effect='blur' />
                   )}

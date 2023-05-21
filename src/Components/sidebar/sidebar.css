@@ -32,7 +32,7 @@ hr {
  }
 a {
     color: var(--text-color);
-    
+     text-decoration: none;
  }
  a:hover {
     color: var(--text-color);
@@ -61,28 +61,26 @@ a {
  li:hover {
     background-color: var(--border-color);
  }
-@media screen and (max-width: var(--breakpoint-medium)) {
-   .sidebar {
+@media screen and (max-width: 550px) {
+    .sidebar {
       width: 90px;
    }
    
-     nav {
-         display: none;
-      }
+     
       li {
         justify-content: center;
      }
+
+     li span{
+      display: none;
+     }
    
 }
-@media (max-width: var(--breakpoint-small)) {
-    /* .sidebar.open{
-        display: none;
-    } */
-    .sidebar {
+@media screen and (max-width:400px) {
+   .sidebar {
       transform: translateX(-100%);
 
       position: fixed;
       z-index: 999;
-      display: none;
    }
 }

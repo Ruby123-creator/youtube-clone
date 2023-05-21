@@ -30,11 +30,11 @@ export const channelDetailsReducer = (
              loading: false,
              error: payload,
           }
-       case SET_SUBSCRIPTION_STATUS:
-        return{
-            ...state,
-            subscriptionStatus:payload
-        }
+      //  case SET_SUBSCRIPTION_STATUS:
+      //   return{
+      //       ...state,
+      //       subscriptionStatus:payload
+      //   }
        default:
           return state
     }

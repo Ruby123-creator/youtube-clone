@@ -30,38 +30,38 @@ export const getCommentsById =id=>async dispatch=>{
 
 
 
- export const addComment =(id,text)=>async (getState,dispatch)=>{
-    try{
-       const obj ={
-        snippet:{
-            videoId:id,
-            topLevelComment:{
-                snippet:{
-                    textOriginal:text,
-                }
-            }
-        }
-       }
-     await request('/commentThreads',obj,{
-         params:{
-          part:'snippet',
-         },
-         headers: {
-            Authorization: `Bearer ${getState().auth.accessToken}`,
-         },
-       })
-    //    console.log(data.items)
-       dispatch({
-          type:CREATE_COMMENT_SUCCESS,
-       })
-       setInterval(()=>dispatch(getCommentsById(id))
-       ,2000)
-    }
-    catch(error){
-      console.log(error.message)
-      dispatch({
-       type:CREATE_COMMENT_FAIL,
-       paylaod:error.message
-      })
-    }
- }
+//  export const addComment =(id,text)=>async (getState,dispatch)=>{
+//     try{
+//        const obj ={
+//         snippet:{
+//             videoId:id,
+//             topLevelComment:{
+//                 snippet:{
+//                     textOriginal:text,
+//                 }
+//             }
+//         }
+//        }
+//      await request('/commentThreads',obj,{
+//          params:{
+//           part:'snippet',
+//          },
+//          headers: {
+//             Authorization: `Bearer ${getState().auth.accessToken}`,
+//          },
+//        })
+//     //    console.log(data.items)
+//        dispatch({
+//           type:CREATE_COMMENT_SUCCESS,
+//        })
+//        setInterval(()=>dispatch(getCommentsById(id))
+//        ,2000)
+//     }
+//     catch(error){
+//       console.log(error.message)
+//       dispatch({
+//        type:CREATE_COMMENT_FAIL,
+//        paylaod:error.message
+//       })
+//     }
+//  }

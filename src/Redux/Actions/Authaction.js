@@ -22,7 +22,7 @@ signInWithPopup(auth, provider)
     sessionStorage.setItem("userProfile",JSON.stringify(profile))
     dispatch({
         type:LOGIN_SUCCESS,
-        payload:token
+        payload:token,
     })
     dispatch({
         type:LOAD_PROFILE,

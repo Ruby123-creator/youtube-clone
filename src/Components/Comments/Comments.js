@@ -3,20 +3,18 @@ import './comments.css'
 import Comment from '../Comment/Comment'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addComment, getCommentsById } from '../../Redux/Actions/CommentAction'
+import { getCommentsById } from '../../Redux/Actions/CommentAction'
 function Comments({videoId,totalComments}) {
     const [text,setText] = useState("")
     const dispatch = useDispatch()
     const comments = useSelector(state=>state.commentList.comments)
-    // console.log(comments)
    const commnetList = comments?.map(comment=>comment.snippet.topLevelComment.snippet)
-//    console.log(commnetList)
    const handleComment =(e)=>{
     e.preventDefault()
     if(text==='')return
-    dispatch(addComment(videoId,text))
     setText('')
    }
+   let user = useSelector(state=>state.auth?.user)
     useEffect(()=>{
        dispatch(getCommentsById(videoId))
     },[dispatch,videoId])
@@ -24,7 +22,7 @@ function Comments({videoId,totalComments}) {
     <div className='comments'>
         <p>{totalComments} comments</p>
         <div className="form d-flex w-100 my-2">
-            <img src=""
+            <img src={user?.photoUrl}
              alt="" 
              className='rounded-circle mr-3'/>
         

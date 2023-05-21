@@ -7,7 +7,6 @@ import Comments from '../../Components/Comments/Comments'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
-// import { Skeleton } from 'react-loading-skeleton'
 import { getRelatedVideos, getVideosById } from '../../Redux/Actions/Videoaction'
 function WatchScreen() {
   const {id} = useParams()
@@ -18,7 +17,6 @@ function WatchScreen() {
   },[dispatch,id])
   const {video ,loading} = useSelector(state=>state.selectedVideo)
   const {videos ,loading:relatedVideosloading} =useSelector(state=>state.relatedVideos)
-  console.log(videos)
   return (
     <Row>
      <Col lg={8}>

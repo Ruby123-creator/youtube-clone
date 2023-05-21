@@ -19,8 +19,8 @@ function Sidebar({handleToggleSidebar,sidebar}) {
    //  console.log("sidebar",sidebar)
     return (
         <nav
-           
-           >
+        className={sidebar ? 'sidebar open' : 'sidebar'}
+        >
 
            <Link to='/'>
               <li>

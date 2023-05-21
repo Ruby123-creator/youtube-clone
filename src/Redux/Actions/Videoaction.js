@@ -123,7 +123,6 @@ export const getRelatedVideos = id => async dispatch => {
             type: 'video',
          },
       })
-      console.log(data)
       dispatch({
          type: RELATED_VIDEO_SUCCESS,
          payload: data.items,
