@@ -14,7 +14,7 @@ const LoginScreen = () => {
  }
  const Navigate = useNavigate();
  useEffect(()=>{
-   if(accessToken && sessionStorage.getItem("userToken")){
+   if(accessToken){
       Navigate('/')
    }
  },[accessToken,Navigate])

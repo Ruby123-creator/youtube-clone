@@ -8,7 +8,7 @@ import SkeletonVideo from '../../Components/Skeleton'
 import { getVideosByCategory } from '../../Redux/Actions/Videoaction'
 import Video from '../../Components/video/Video'
 import { useEffect } from 'react'
-// import CategoryBar from '../../Components/categoryBar/CategoryBar'
+import CategoryBar from '../../Components/categoryBar/CategoryBar'
 function HomeScreen() {
     const dispatch = useDispatch()
     useEffect(() => {
@@ -27,10 +27,13 @@ function HomeScreen() {
     }
  
   return (
-    <Container>
-      {/* <div className="category">
+    <Container className='homescreen'>
         <CategoryBar/>
-        </div> */}
+        
+
+
+        
+        <div className='homescreenVideos'>
         <InfiniteScroll
             dataLength={videos.length}
             next={fetchData}
@@ -51,6 +54,7 @@ function HomeScreen() {
                  ))}
                  </div>
          </InfiniteScroll>
+         </div>
     </Container>
   )
 }

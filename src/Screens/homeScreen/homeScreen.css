@@ -1,5 +1,6 @@
 .videoBox{
     position: relative;
+    top: 50px;
     display: flex;
     z-index: 20;
     flex-wrap: wrap;

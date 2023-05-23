@@ -13,6 +13,8 @@ const keywords = [
     'Algorithm Art ',
     'Guitar',
     'Bengali Songs',
+    'Mashup songs',
+    'Korean Dramas',
     'Coding',
     'Cricket',
     'Football',
