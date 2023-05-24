@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import './videohor.css'
 
 import { AiFillEye } from 'react-icons/ai'
 import request from '../../api'
@@ -10,7 +9,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { Col, Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 
-function VideoHor({video}) {
+function SearchVideo({video}) {
    const [views, setViews] = useState(null)
    const [duration, setDuration] = useState(null)
    const [channelIcon, setChannelIcon] = useState(null)
@@ -21,11 +20,14 @@ function VideoHor({video}) {
       snippet: {
          channelId,
          channelTitle,
+         description,
          title,
          publishedAt,
          thumbnails: { medium },
+         // resourceId,
       },
    } = video
+   const isvideo = id.kind==='youtube#video'
    useEffect(() => {
       const get_video_details = async () => {
          const {
@@ -39,11 +41,12 @@ function VideoHor({video}) {
          setDuration(items[0].contentDetails.duration)
          setViews(items[0].statistics.viewCount)
       }
-    get_video_details()
-   }, [id])
+    if(isvideo) get_video_details()
+   }, [id,isvideo])
    const HandleClick =()=>{
-   
+      isvideo?
      Navigate(`/watch/${id.videoId}`)
+     :Navigate(`/channel/${id.channelId}`)
 
    }
    useEffect(() => {
@@ -66,9 +69,10 @@ function VideoHor({video}) {
 
 
   return (
-    <Row className='videoHorizontal m-1 w-full align-align-items-center' onClick={HandleClick}>
+    <Row className='video-row' onClick={HandleClick}>
    <Col
-            xs={6}
+            
+            
             className='left'>
 
 
@@ -82,8 +86,8 @@ function VideoHor({video}) {
             />
 
             
-            <span className='duration'>{_duration}</span>
-
+            {isvideo && <span className='duration'>{_duration}</span>
+}
           </div>
  
          
@@ -99,11 +103,11 @@ function VideoHor({video}) {
                   <AiFillEye /> {numeral(views).format('0.a')} Views •
                   {moment(publishedAt).fromNow()}
                </div>
-               
+               {  isvideo&& <p className='mt-1 desc'>{description}</p>} 
 <div className='mb-2 channel d-flex align-items-center'>
-            
+               {isvideo && (
                   <LazyLoadImage src={channelIcon?.url} effect='blur' />
-               
+                  )}
                <p className='mb-0'>{channelTitle}</p>
             </div>
             
@@ -112,4 +116,4 @@ function VideoHor({video}) {
   )
 }
 
-export default VideoHor
+export default SearchVideo;

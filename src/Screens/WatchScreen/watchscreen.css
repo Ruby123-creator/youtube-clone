@@ -5,6 +5,8 @@
    height: 70vh;
    background-color: #353946;
    width: 100%;
+   box-shadow: 0 3px 100px rgba(233, 217, 217, 0.962);
+   margin-top: 2rem;
    margin-bottom: 2rem;
 }
 

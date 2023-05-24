@@ -4,8 +4,8 @@ import { useParams } from 'react-router-dom'
 import { getVideosBySearch } from '../../Redux/Actions/Videoaction'
 import  { Container } from 'react-bootstrap'
 import Skeleton , { SkeletonTheme } from 'react-loading-skeleton'
-import VideoHor from '../../Components/VideoHorizontal/VideoHor'
-
+import SearchVideo from '../../Components/searchScreenVideos/SearchVideos'
+import './searchscreen.css'
 function SearchScreen() {
     const {query} = useParams()
     console.log(query)
@@ -21,8 +21,8 @@ function SearchScreen() {
         
         {
             !loading?(
-                videos.videos.map(video=>(
-                    <VideoHor video={video} key ={video.id.videoId} searchScreen ={true}/>
+                videos.videos?.map(video=>(
+                    <SearchVideo video={video} key ={video.id.videoId} />
                 ))
             ):
             (

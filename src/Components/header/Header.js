@@ -1,5 +1,6 @@
 import React, {useState } from 'react'
 import './header.css'
+import MicIcon from '@mui/icons-material/Mic';
 import { FaBars } from 'react-icons/fa'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { MdNotifications, MdApps } from 'react-icons/md'
@@ -17,18 +18,27 @@ const Navigate = useNavigate()
   
     return (
         <div className='header '>
+         <div style={{display:'flex' ,gap:'20px' ,alignItems:'center'}}>
+            <div>
            <FaBars
               className='menu'
               size={26}
               onClick={() => handleToggleSidebar()}
            />
-  
+       </div>
+       <div style={{display:'flex' ,alignItems:'center' ,gap:'5px'}}>
            <img
-              src='https://1000logos.net/wp-content/uploads/2017/05/Color-YouTube-logo.jpg'
+              src='https://cdn-icons-png.flaticon.com/512/1384/1384060.png'
               alt=''
+              width={"20px"}
               className='logo'
            />
-  
+           <span style={{color:'#fff' ,fontWeight:'600'}}>YouTube <sup style={{color:'grey'}}>IN</sup> </span>
+           </div>
+           </div>
+      
+
+      <div style={{display:'flex' , alignItems:'center' ,justifyContent:'center'}}>
            <form onSubmit={handleSubmit} >
               <input
                  type='text'
@@ -37,8 +47,12 @@ const Navigate = useNavigate()
                  onChange={(e)=>setSearchInput(e.target.value)}
               />
              <button type='submit'>                 <AiOutlineSearch size={22} />
-</button> 
+            </button> 
            </form>
+            <div className='Mic'>
+               <MicIcon/>
+            </div>
+           </div>
            
   
            <div className='icons'>

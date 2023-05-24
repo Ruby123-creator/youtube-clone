@@ -119,7 +119,7 @@ export const getRelatedVideos = id => async dispatch => {
          params: {
             part: 'snippet',
             relatedToVideoId: id,
-            maxResults: 15,
+            maxResults: 25,
             type: 'video',
          },
       })
