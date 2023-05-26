@@ -1,9 +1,8 @@
 import React, {useState } from 'react'
 import './header.css'
-import MicIcon from '@mui/icons-material/Mic';
 import { FaBars } from 'react-icons/fa'
 import { AiOutlineSearch } from 'react-icons/ai'
-import { MdNotifications, MdApps } from 'react-icons/md'
+import { MdNotifications, MdApps ,MdMic } from 'react-icons/md'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 function Header({handleToggleSidebar }) {
@@ -50,7 +49,7 @@ const Navigate = useNavigate()
             </button> 
            </form>
             <div className='Mic'>
-               <MicIcon/>
+               <MdMic size={26}/>
             </div>
            </div>
            
