@@ -49,8 +49,9 @@
       .menu {
          display: block;
       }
-     .header .logo {
-         display: none;
+     
+      .header .brand-icon span{
+        display: none;
       }
 
       .icons > *:not(img) {

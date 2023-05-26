@@ -26,7 +26,7 @@ const Navigate = useNavigate()
               onClick={() => handleToggleSidebar()}
            />
        </div>
-       <div style={{display:'flex' ,alignItems:'center' ,gap:'5px'}}>
+       <div style={{display:'flex' ,alignItems:'center' ,gap:'5px'}} className='brand-icon'>
            <img
               src='https://cdn-icons-png.flaticon.com/512/1384/1384060.png'
               alt=''

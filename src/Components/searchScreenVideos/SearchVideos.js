@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react'
 
 import { AiFillEye } from 'react-icons/ai'
 import request from '../../api'
-
+import './searchVideo.css'
 import moment from 'moment'
 import numeral from 'numeral'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-import { Col, Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 
 function SearchVideo({video}) {
@@ -69,8 +68,8 @@ function SearchVideo({video}) {
 
 
   return (
-    <Row className='video-row' onClick={HandleClick}>
-   <Col
+    <div className='video-row' onClick={HandleClick}>
+   <div
             
             
             className='left'>
@@ -91,8 +90,8 @@ function SearchVideo({video}) {
           </div>
  
          
-         </Col>
-         <Col
+         </div>
+         <div
             xs={6}
          
             className='p-0 right'>
@@ -103,16 +102,18 @@ function SearchVideo({video}) {
                   <AiFillEye /> {numeral(views).format('0.a')} Views •
                   {moment(publishedAt).fromNow()}
                </div>
-               {  isvideo&& <p className='mt-1 desc'>{description}</p>} 
-<div className='mb-2 channel d-flex align-items-center'>
+               <div>
+               {  isvideo&& <p className='mt-1 desc'>{description}</p>}
+               </div> 
+<div className='mb-2 channel d-flex gap-2 align-items-center'>
                {isvideo && (
                   <LazyLoadImage src={channelIcon?.url} effect='blur' />
                   )}
                <p className='mb-0'>{channelTitle}</p>
             </div>
             
-         </Col>
-    </Row>
+         </div>
+    </div>
   )
 }
 

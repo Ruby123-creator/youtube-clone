@@ -1,12 +1,13 @@
 import React from 'react'
 import './sidebar.css'
+import { MdWatchLater } from "react-icons/md";
+
 // import { useNavigate } from 'react-router-dom'
 import {
    MdSubscriptions,
    MdExitToApp,
    MdThumbUp,
    MdHistory,
-   MdLibraryBooks,
    MdHome,
    MdSentimentDissatisfied,
 } from 'react-icons/md'
@@ -45,10 +46,12 @@ function Sidebar({handleToggleSidebar,sidebar}) {
               <span>History</span>
            </li>
   
-           <li>
-              <MdLibraryBooks size={23} />
-              <span>Library</span>
-           </li>
+           <Link to='/feed/watchlater'>
+            <li>
+              <MdWatchLater size={23} />
+              <span>Watch Later</span>
+              </li>
+           </Link>
            <li>
               <MdSentimentDissatisfied size={23} />
               <span>I don't Know</span>

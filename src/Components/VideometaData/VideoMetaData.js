@@ -2,14 +2,16 @@ import React, { useEffect, useState } from 'react'
 import './VideometaData.css'
 import moment from 'moment'
 import numeral from 'numeral'
+import { MdWatchLater } from "react-icons/md";
 import { MdThumbUp, MdThumbDown } from 'react-icons/md'
 // import { checkSubscriptionStatus } from '../../Redux/Actions/Channel'
 import ShowMoreText from 'react-show-more-text'
 import { useDispatch, useSelector } from 'react-redux'
 import { getChannelDetails } from '../../Redux/Actions/Channel'
-function VideoMetaData({video:{snippet,statistics},videoId}) {
-  const {channelId ,channelTitle ,description,title,publishedAt} = snippet;
-  const {viewCount,likeCount,dislikeCount} = statistics
+import { saveVideos } from '../../Redux/Actions/WatchAction';
+function VideoMetaData({video,videoId}) {
+  const {channelId ,channelTitle ,description,title,publishedAt} = video.snippet;
+  const {viewCount,likeCount,dislikeCount} = video.statistics
   const {snippet:channelSnippet,statistics:channelStatistics} = useSelector(state=>state.channelDetails.channel)
 //   const subscriptionStatus = useSelector(state=>state.channelDetails.subscriptionStatus)
 const [subscriptionStatus,setSubscriptionStatus] = useState(false)
@@ -33,6 +35,9 @@ const [dislike,setdislike] = useState(false)
         </span>
 
         <div className='d-flex gap-3'>
+         <span className='mr-6'>
+            <MdWatchLater size={26} onClick={()=>dispatch(saveVideos(video))}/>
+         </span>
            <span className='mr-3'>
               <MdThumbUp size={26} onClick={()=>{
                setlike(!like) 

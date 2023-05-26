@@ -9,6 +9,7 @@ import { commentListReducer } from './Reducers/CommentsReducer'
 import { HomeVideoReducer } from './Reducers/Videoreducer'
 import { relatedVideoReducer } from './Reducers/Videoreducer'
 import { subscriptionsChannelReducer } from './Reducers/Videoreducer'
+import { watchLater } from './Reducers/Watchlater'
 const rootReducer = combineReducers({
     auth: authReducer,
     homeVideos:HomeVideoReducer,
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
     commentList:commentListReducer,
     relatedVideos:relatedVideoReducer,
     searchedVideo:searchVideoReducer,
-    subscriptionsChannel:subscriptionsChannelReducer
+    subscriptionsChannel:subscriptionsChannelReducer,
+    watchLaterVideos:watchLater,
 })
 
 const store = createStore(rootReducer,{} ,composeWithDevTools(applyMiddleware(thunk)))

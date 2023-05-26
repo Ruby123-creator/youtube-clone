@@ -17,6 +17,7 @@ function WatchScreen() {
   },[dispatch,id])
   const {video ,loading} = useSelector(state=>state.selectedVideo)
   const {videos} =useSelector(state=>state.relatedVideos)
+  document.title = video?.snippet?.title;
   return (
     <Row>
      <Col lg={8}>
