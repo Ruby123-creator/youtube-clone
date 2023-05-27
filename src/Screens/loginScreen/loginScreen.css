@@ -1,9 +1,8 @@
 @import url('../../base.css');
 
 .login {
-   height: 100vh;
+   height: 90vh;
    display: grid;
-
    place-items: center;
  justify-content: center;
  align-items: center;
@@ -23,6 +22,7 @@ img {
     padding: 2rem;
     margin: 0 1rem;
     border-radius: 10px;
+    /* position: fixed; */
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -4,5 +4,5 @@
     display: flex;
     z-index: 20;
     flex-wrap: wrap;
-    justify-content: space-around !important;
+    gap: 10px;
 }

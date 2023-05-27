@@ -10,6 +10,7 @@ import Video from '../../Components/video/Video'
 import { useEffect } from 'react'
 import CategoryBar from '../../Components/categoryBar/CategoryBar'
 function HomeScreen() {
+   document.title ="YouTube"
     const dispatch = useDispatch()
     useEffect(() => {
        dispatch(getPopularVideos())
