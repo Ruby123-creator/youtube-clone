@@ -12,6 +12,7 @@ import WatchScreen from './Screens/WatchScreen/WatchScreen';
 import SearchScreen from './Screens/searchScreen/SearchScreen';
 import ChannelScreen from './Screens/channelScreen/ChannelScreen';
 import WatchlaterScreen from './Screens/WatchlaterScreen/WatchlaterScreen';
+import SubscriptionsScreen from './Screens/subscriptionScreen/SubscriptionScreen';
 const Layout = ({ children }) => {
   const [sidebar, toggleSidebar] = useState(false)
    //   console.log('sidebar' ,sidebar)
@@ -54,7 +55,7 @@ function App() {
         <Route path="/watch/:id" element={<Layout><WatchScreen/></Layout>}/>    
         <Route path="/search/:query" element={<Layout><SearchScreen/></Layout>}/>  
         <Route path="/channel/:channelid" element={<Layout><ChannelScreen/></Layout>}/>    
-        <Route path="/feed/subscriptions" element={<Layout><ChannelScreen/></Layout>}/>    
+        <Route path="/feed/subscriptions" element={<Layout><SubscriptionsScreen/></Layout>}/>    
         <Route path="/feed/watchlater" element={<Layout><WatchlaterScreen/></Layout>}/>
 
          </Routes> 

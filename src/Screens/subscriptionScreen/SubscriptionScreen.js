@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import { useDispatch, useSelector } from 'react-redux'
 import VideoHor from '../../Components/VideoHorizontal/VideoHor'
-import { getSubscribedChannels } from '../../Redux/Actions/Videoaction'
+import {  getSubscribedChannels } from '../../Redux/Actions/Videoaction'
 // import './subscriptions.scss'
 
 const SubscriptionsScreen = () => {
@@ -14,6 +14,7 @@ const SubscriptionsScreen = () => {
    }, [dispatch])
 
    const { loading, videos } = useSelector(state => state.subscriptionsChannel)
+   console.log(videos)
 
    return (
       <Container fluid>

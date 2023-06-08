@@ -8,7 +8,8 @@ import { MdThumbUp, MdThumbDown } from 'react-icons/md'
 import ShowMoreText from 'react-show-more-text'
 import { useDispatch, useSelector } from 'react-redux'
 import { getChannelDetails } from '../../Redux/Actions/Channel'
-import { saveVideos } from '../../Redux/Actions/WatchAction';
+import { db } from '../../firbase';
+import { addDoc ,collection } from 'firebase/firestore';
 function VideoMetaData({video,videoId}) {
   const {channelId ,channelTitle ,description,title,publishedAt} = video.snippet;
   const {viewCount,likeCount,dislikeCount} = video.statistics
@@ -17,6 +18,23 @@ function VideoMetaData({video,videoId}) {
 const [subscriptionStatus,setSubscriptionStatus] = useState(false)
 const [like ,setlike] = useState(false)
 const [dislike,setdislike] = useState(false)
+let watchlaterVideos = [];
+const saveLater =async (video)=>{
+   watchlaterVideos.forEach((element)=>{
+      if(element.id===video.id){
+         return;
+      }
+   })
+   watchlaterVideos.push(video)
+   try {
+      const docRef = await addDoc(collection(db ,"saveVideos"), {
+       savevideos:video,
+      });
+      console.log("Document written with ID:",docRef);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+}
   const dispatch = useDispatch()
   useEffect(()=>{
       dispatch(getChannelDetails(channelId))
@@ -36,7 +54,11 @@ const [dislike,setdislike] = useState(false)
 
         <div className='d-flex gap-3'>
          <span className='mr-6'>
-            <MdWatchLater size={26} onClick={()=>dispatch(saveVideos(video))}/>
+            <MdWatchLater size={26} onClick={()=>
+            {  
+               
+               saveLater(video)
+            }}/>
          </span>
            <span className='mr-3'>
               <MdThumbUp size={26} onClick={()=>{

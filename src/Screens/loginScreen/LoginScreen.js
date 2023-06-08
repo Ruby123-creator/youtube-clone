@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import { useDispatch ,useSelector} from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { Login } from '../../Redux/Actions/Authaction'
+import ModalOpen from '../../Components/ModalOpen/Modal'
 
 
 const LoginScreen = () => {
@@ -29,6 +30,7 @@ const LoginScreen = () => {
                alt=''
             />
             <button onClick={handleLogin} >Login With google</button>
+              <ModalOpen/>
             <p>This Project is made using YOUTUBE DATA API</p>
          </div>
       </div>

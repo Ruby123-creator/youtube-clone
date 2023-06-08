@@ -14,6 +14,7 @@ signInWithPopup(auth, provider)
   .then((result) => {
     // console.log(result)
     const token = result.user.accessToken;
+    console.log(token);
     let profile={
         name:result.user.displayName,
         photoUrl:result.user.photoURL,
